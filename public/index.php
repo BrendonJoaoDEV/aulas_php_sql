@@ -53,7 +53,7 @@
                 btnEditar.onclick = async () => {
                     // Abre prompt para editar o texto
                     const novoTitulo = prompt("Editar tarefa:", t.titulo);
-                    if (novoTitulo = novoTitulo.trim() !== "") {
+                    if (novoTitulo && novoTitulo.trim() !== "") {
                         await fetch("../api/editar.php", {
                             method: "POST",
                             body: JSON.stringify({
@@ -79,7 +79,7 @@
                 };
 
                 // Adiciona tudo no item da lista
-                li.append(" ", btnConcluir, " ", btnExcluir, " ", btnEditar);
+                li.append(" ", btnConcluir, " ", btnEditar, " ", btnExcluir);
                 lista.appendChild(li);
             });
         }
